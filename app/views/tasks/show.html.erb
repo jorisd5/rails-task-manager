@@ -1,0 +1,16 @@
+<h1><%= @task[:title] %></h1>
+<button><%= link_to "Edit Task", edit_path(@task) %></button>
+<div class="show"><span><%= @task[:details] %></span></div><br />
+<div><%= check_box_tag(@task[:title], @task[:title], @task[:completed], disabled: true) %><span>
+<% if @task[:completed] %>
+  This task is already completed
+<% else %>
+  This task is not completed yet
+<% end %>
+</span></div>
+<br />
+
+<%= link_to "Back to list", tasks_path %>
+
+
+
